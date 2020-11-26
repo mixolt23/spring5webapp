@@ -1,5 +1,7 @@
 package guru.springframework.spring5webapp.domain;
 
+import org.thymeleaf.standard.expression.Each;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +19,7 @@ public class Author {
     private String firstName;
     private String lastName;
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors", fetch = FetchType.EAGER)
     private Set<Book> books = new HashSet<>();
 
     public Author() {

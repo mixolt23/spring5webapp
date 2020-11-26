@@ -22,6 +22,7 @@ public class BookController {
 
         model.addAttribute("books", bookRepository.findAll());
 
+        //Sucht im Verzeichnis namens "books" eine Datei namens "list.html"
         return "books/list";
     }
 }
